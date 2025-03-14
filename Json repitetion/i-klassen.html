@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vis JSON</h1>
+    <div id="resultat"></div>
+    <button onclick="tilfoj('Brygger Palles øl')">Klik her nu</button> <!--Øllen kommer in i listen i console, men ikke på sitet da funktionen står under loop'et -->
+
+    <div id="nyListe"></div>
+
+    <script>
+    let produkter = {
+        name: "Lys Ale",
+        type: "Ale",
+        taste: "Lime & æble",
+        billede: "b1.png",
+        tags: [
+                "Weissbier", 
+                "IPA", 
+                "ECO", 
+                "Zeeez",
+                "Ale", 
+                "Special", 
+                "Nisseøl", 
+                "Classic", 
+                "Ufilteret",
+                "Banan"
+            ]
+    }
+
+    console.log( produkter )
+    console.log( produkter.taste )
+
+    resultat.innerHTML = "<h1>" + produkter.name + "</h1>" + "<h2>" + produkter.taste + "</h2>"
+    resultat.innerHTML += "<img src='images/" + produkter.billede + "' alt='et billede af en øl fra ZeroBuzz Brew'>"
+    //+ produkter.tags[3]
+
+
+    //tilføj noget til dit array
+    //tilfoj("Osteøl")
+    //tilfoj("Ny øl")
+
+
+    //vi vil have elementerne ind i en liste på sitet
+
+    //listen skal lige sorteres
+    produkter.tags.sort()
+    resultat.innerHTML += "<ul>"
+
+    
+    //vi looper indholder af arry'et ud
+    for (let i = 0; i < produkter.tags.length; i++) {
+        resultat.innerHTML += "<li>" + produkter.tags[i] + "</li>"
+    }
+    
+    //listen afsluttes
+    resultat.innerHTML += "</ul>"
+
+    //funktion til tilføj noget til dit array
+    function tilfoj( dimmer ) {
+        produkter.tags.push(dimmer)
+
+        produkter.tags.sort()
+        nyListe.innerHTML += "<ul>"
+
+    
+        //vi looper indholder af arry'et ud
+        for (let i = 0; i < produkter.tags.length; i++) {
+            nyListe.innerHTML += "<li>" + produkter.tags[i] + "</li>"
+        }
+
+        //listen afsluttes
+        nyListe.innerHTML += "</ul>"
+    }
+    
+
+
+
+    </script>
+</body>
+</html>

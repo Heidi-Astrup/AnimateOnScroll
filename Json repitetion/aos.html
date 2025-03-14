@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .enorm {
+            width: 33px;
+            height: 200vh;
+            background-color: deeppink;
+        }
+
+        #animeret {
+            background-color: rgb(60, 179, 225);
+            width: 100px;
+        }
+
+        img {
+            width: 100%;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="enorm"></div>
+
+    <!--data-aos="xx" fra denne side https://michalsnik.github.io/aos/-->
+    <article id="animeret" data-aos="flip-left">
+        <h1>hej Verden</h1>
+        <img src="images/b1.png" alt="billede af øldåse">
+    </article>
+
+    <article id="animeret" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="500">
+        <h1>Ny verden</h1>
+        <img src="images/b1.png" alt="billede af øldåse">
+    </article>
+
+    <article id="animeret" data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine">
+        <h1>Nyere verden</h1>
+        <img src="images/b1.png" alt="billede af øldåse">
+    </article>
+
+    <article id="animeret" data-aos="fade-up-right">
+        <h1>Nyest verden</h1>
+        <img src="images/b1.png" alt="billede af øldåse">
+    </article>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(
+        {
+            duration:3000
+        });
+    </script>
+    
+</body>
+</html>
