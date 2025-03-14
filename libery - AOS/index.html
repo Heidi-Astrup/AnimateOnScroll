@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Din egen CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .box {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    #enorm {
+    width: 333px;
+    height: 100vh;
+    background-color: #ddd;
+    }
+
+    #animeret {
+    width: 333px;
+    height: 100vh;
+    background-color: #ddf;
+    animation: animeret 2s infinite;
+    }
+  </style>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <div id="enorm"></div>
+        <div data-aos="zoom-in-right" id="animeret">Hej verden</div>
+
+        <div class="container">
+            <h1>Animate On Scroll Eksempel</h1>
+            <div class="box" data-aos="fade-up" data-aos-anchor-placement="top-center">
+              <h2>Fade Up Animation</h2>
+              <p>Dette indhold vil fade op, når det kommer ind i viewporten.</p>
+            </div>
+            <div class="box" data-aos="fade-down" data-aos-anchor-placement="top-center">
+              <h2>Fade Down Animation</h2>
+              <p>Dette indhold vil fade ned, når det kommer ind i viewporten.</p>
+            </div>
+            <div class="box" data-aos="fade-right" data-aos-anchor-placement="top-center">
+              <h2>Fade Right Animation</h2>
+              <p>Dette indhold vil fade ind fra højre, når det kommer ind i viewporten.</p>
+            </div>
+            <div class="box" data-aos="fade-left" data-aos-anchor-placement="top-center">
+              <h2>Fade Left Animation</h2>
+              <p>Dette indhold vil fade ind fra venstre, når det kommer ind i viewporten.</p>
+            </div>
+          </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        const tl = gsap.timeline({
+  scrollTrigger: {
+    scrub: 1,
+    pin: true,
+    trigger: "#pin-windmill",
+    start: "50% 50%",
+    endTrigger: "#pin-windmill-wrap",
+    end: "bottom 50%",
+  },
+});
+
+tl.to("#pin-windmill-svg", {
+  rotateZ: 900,
+});
+    </script>
+</body>
+</html>
